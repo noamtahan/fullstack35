@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="number" id="number" />
+    <button onclick="checkNum()">check Me!</button>
+    <p id="msg"></p>
+
+
+    <script>
+        function checkNum() {
+            console.log(typeof document.getElementById("number").value);
+            var msg;
+            var num = parseInt(document.getElementById("number").value);
+            if (num > 18) {
+                msg = "Gadol";
+                msg = msg.toUpperCase();
+            } else {
+                msg = "Katan";
+                msg = msg.toLowerCase();
+
+            }
+            document.getElementById("msg").innerText = msg;
+        }
+
+
+    </script>
+</body>
+
+</html>

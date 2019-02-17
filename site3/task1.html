@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p class="noam"></p>
+    <p></p>    
+    <p></p>
+    <p class="noam"></p>
+    <p></p>
+    <p></p>   
+     <p></p>
+    <p></p>
+    <h2></h2>
+    <p></p>    
+    <p class="noam"></p>
+    <p></p>
+    <p></p>
+    <p></p>   
+     <p></p>
+    <p></p>
+    <p></p>
+    <p></p>   
+     <p></p>
+    <h3></h3>
+    <p></p>
+    <p class="noami"></p>
+     <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+        <script>
+                // // document.write("<h1> This is </h1>");
+        
+        
+                var h1Tags = document.getElementsByTagName("h1");
+                console.log(h1Tags.length);
+                h1Tags[0].innerText = "Eden";
+
+
+                var pTags = document.getElementsByTagName("p");
+                console.log(pTags.length);
+                
+                for (var index = 0; index < pTags.length; index++) {
+                    pTags[index].innerText = "p" + (index+1);
+                    pTags[index].style.color = "red";
+                    
+                }
+
+                // var noamClasses = document.getElementsByClassName("noam");
+                // console.log(noamClasses.length);
+
+                // for (var index = 0; index < noamClasses.length; index++) {
+                //     noamClasses[index].innerText = "pNoam" + (index+1);
+                    
+                // }
+
+                
+                // for (var index = 0; index < pTags.length; index++) {
+                //     // if(pTags[index].hasAttribute("class")) {
+                //     if(pTags[index].className == "noam") {
+                //         pTags[index].innerText = "pNoam" + (index+1);
+                //     } else {
+                //         pTags[index].innerText = "p" + (index+1);
+
+                //     }
+                // }
+
+
+
+
+
+
+                
+                // console.log(pTags);
+        
+        
+        
+                // var fNameInputs = document.getElementsByName("fname");
+                // console.log(fNameInputs[1].value = "Noam");
+                
+        
+                // var mainTitle = document.getElementById("mainTitle");
+                // // alert(mainTitle.innerText);
+                // // alert(mainTitle.innerHTML);
+                // // mainTitle.innerHTML = "<h1>Noam after</h1>";
+                
+            </script>
+        
+        
+</body>
+</html>

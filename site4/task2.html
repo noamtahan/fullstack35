@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://www.walla.co.il" onsubmit="return checkNum()">
+        <input type="number" id="number" />
+        <input type="submit" value="check Me!">
+    </form>
+
+    <p id="msg"></p>
+
+
+    <script>
+        function checkNum() {
+            console.log(typeof document.getElementById("number").value);
+            var msg, flag;
+            var num = parseInt(document.getElementById("number").value);
+            if (num > 18) {
+                flag = false;
+                msg = "Gadol";
+                msg = msg.toUpperCase();
+            } else {
+                flag = true;
+                msg = "Katan";
+                msg = msg.toLowerCase();
+
+            }
+            document.getElementById("msg").innerText = msg;
+            // if(flag) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+            return flag;
+        }
+
+
+    </script>
+</body>
+
+</html>

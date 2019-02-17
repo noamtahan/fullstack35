@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1>Site 6</h1>
+        <p>Your req uerst task to do</p>
+        <p>draw retngl on dsktp.</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="sel1">Plese Select shape:</label>
+                        <select class="form-control" id="sel1" name="whatToDraw" onchange="nextStepForm()">
+                            <option>--</option>
+                            <option value="1">cir</option>
+                            <option value="2">rec</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="display: none" id="justOnCirShow">
+                        <label for="pwd">Cir radius:</label>
+                        <input type="number" class="form-control" id="rad">
+                    </div>
+                    <div id="justOnRecShow" style="display: none">
+                        <div class="form-group">
+                            <label for="pwd">X zela is:</label>
+                            <input type="number" class="form-control" id="xZela">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Y zela is:</label>
+                            <input type="number" class="form-control" id="yZela">
+                        </div>
+
+                    </div>
+
+                    <div id="submit" style="display: none">
+
+                        <button type="button" class="btn btn-primary" onclick="drawFormInfo()">Submit</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <p id="t"></p>
+                    <canvas id="canZel" width="300" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="custom1.js"></script>
+
+</body>
+
+</html>

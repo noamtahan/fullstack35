@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body onload="insertDefaultVal()">
+
+
+<input type="text" name="firstname" class="inputfield" oninput="noamOnBottom()">
+
+
+<input type="button" value="email validator" onclick="noamOnBottom()">
+
+
+<p id="demo"></p>
+
+
+<script>
+
+
+function noamOnBottom() {
+	var x = document.getElementsByClassName("inputfield");
+    var emailToCheck = x[0].value;
+    if(emailToCheck.indexOf('@') == emailToCheck.lastIndexOf('@') && emailToCheck.indexOf('@') != -1) {
+        document.getElementById("demo").innerHTML =  emailToCheck + " is a valid email!!!";
+        document.getElementById("demo").style.color = "black";
+
+    } else {
+        document.getElementById("demo").innerHTML =  emailToCheck + " is <strong> not </strong> a valid email!!!";
+        document.getElementById("demo").style.color = "red";
+        }
+}
+
+
+function insertDefaultVal() {
+	document.getElementsByClassName("inputfield")[0].value = "noam";
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #time {
+            text-align: center;
+            font-size: 172px;
+        }
+    </style>
+</head>
+<body onload="myTime();">
+    <h1 id="time"></h1>
+
+    <script>
+
+        function timeDisplay(num) {
+            if(num < 10) {
+                num = "0" + num;   // 9 => 09 || 13 => 13
+            } 
+            return num;
+        }
+
+        function myTime() {
+            var time = new Date();
+            var hour = timeDisplay(time.getHours());        
+            var minutes = timeDisplay(time.getMinutes());       
+            var seconds = timeDisplay(time.getSeconds()); 
+
+
+
+            var output = hour + ":" + minutes + ":" + seconds;
+
+            document.getElementById('time').innerText = output;
+
+        }
+    
+        setTimeout(
+            function(){
+                // alert();
+                // console.log("Noam")
+            }, 
+            3000);
+
+        setInterval(
+            function(){
+                myTime();
+            }, 
+            1000);
+            
+
+    </script>
+</body>
+</html>

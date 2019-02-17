@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainTitle">
+            <p>Noam</p>
+            <span>Noam</span>
+            <a href="#">Noam</a>
+            <h2>Noam</h2>
+            <h3>Noam</h3>
+    </div>
+
+    <form action="">
+            <input name="fname" type="text" />
+        </form>
+
+
+        <form action="">
+                <input name="fname" type="passsord" value="ggg" > 
+            </form>
+    <p>Tahan</p>
+
+
+    <script>
+        // document.write("<h1> This is </h1>");
+
+
+        var pTags = document.getElementsByTagName("p");
+        console.log(pTags);
+
+
+
+        var fNameInputs = document.getElementsByName("fname");
+        console.log(fNameInputs[1].value = "Noam");
+        
+
+        var mainTitle = document.getElementById("mainTitle");
+        // alert(mainTitle.innerText);
+        // alert(mainTitle.innerHTML);
+        // mainTitle.innerHTML = "<h1>Noam after</h1>";
+        
+    </script>
+
+</body>
+</html>
