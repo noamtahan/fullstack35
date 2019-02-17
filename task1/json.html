@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <button id="convertMe" onclick="addToArr()">click me</button>
+    <button id="displayMe" onclick="printMyArr()">click me</button>
+    <script>
+        var i = 0;
+        var arrToSave = [];
+
+        function printMyArr() {
+            var myJSON = localStorage.getItem("objJSON");
+            var arrToSave = JSON.parse(myJSON);
+
+            for (var i = 0 ; i< arrToSave.length; i++) {
+                document.getElementById("demo").innerHTML += arrToSave[i].title;
+
+            }
+
+        }
+
+
+        function addToArr() {
+            arrToSave[i] = {
+                title: i,
+                date: "654",
+                time: "4356"
+            };
+            var myJSON = JSON.stringify(arrToSave);
+            localStorage.setItem("objJSON", myJSON);
+
+            i++;
+        }
+
+
+        function noam() {
+            var ana = localStorage.getItem("objJSON");
+            var myObjAgainFromJSON = JSON.parse(ana);
+            document.getElementById("demo").innerHTML = myObjAgainFromJSON.age[1];
+        }
+
+
+        // var obj = { 
+        //     name: "John",   // obj.name => Joun
+        //     age: [          // obj.age[0] => 30
+        //         30, 
+        //         "ffg", 
+        //         true
+        //     ], 
+        //     city: {        // obj.city.age[2] = > true
+        //         name: "John", 
+        //         age: [
+        //             30, 
+        //             "ffg", 
+        //             true
+        //         ], 
+        //         city: "New York"  // obj.city.city = > New York
+        //     } 
+        // };
+        // var myJSON = JSON.stringify(obj);  // string
+        // var myObjAgainFromJSON = JSON.parse(myJSON);
+
+        // localStorage.setItem("objJSON", myJSON);
+
+
+
+
+
+
+
+        // document.getElementById("demo").innerHTML = myJSON;
+
+
+
+        console.log(typeof obj); // Object
+        console.log(typeof myJSON); // String
+        console.log(typeof myObjAgainFromJSON); // Object
+
+
+
+        // alert(myObjAgainFromJSON.name)
+
+
+        // var obj = {
+        //     name: "Noam",
+        //     munbersloto: [17, 23, 34, 45, 56, 67, 78, 89],
+        //     male: {
+        //         1: 12,
+        //         2: 23,
+        //         3: 34
+        //     },
+        // }
+
+        // objToSave =
+        //     console.log(obj);
+        // alert(obj);
+        // document.getElementById("obj").innerHTML = obj;
+        // localStorage.setItem("obj", obj);
+        // localStorage.setItem("toSend", toSend);
+
+        // for (key in obj) {
+        //     console.log(key + ":" + obj[key]);
+        //     localStorage.setItem(key, obj[key]);
+
+
+        // }
+
+
+    </script>
+</body>
+
+</html>
