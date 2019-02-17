@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form onsubmit="return hhh()">
+<input id="h" type="number" max=50>
+<input type="submit" value="ggg">
+</form>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+function hhh() {
+
+var noam = document.getElementById("h").value
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,noam,0,2*Math.PI);
+ctx.fill();
+return false;
+}
+</script> 
+
+</body>
+</html>
