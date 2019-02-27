@@ -10,19 +10,21 @@
 
 <body>
     <script>
-        // An object with 2 properties    
-        var p = { x: 2.3, y: -1.2 };
+        const obj = {};
+        obj.x = 123;
+        console.log(obj.x);
+        {
+            // let obj;
+            obj = {};
+            obj.x=77;
+            console.log(obj.x);
 
-        //An empty object with no properties   
-        var q = {};
+            let obj;
 
-        //add to q the same properties as p   
-        q.x = 2.3;
-        q.y = -1.2;
+            
+        }
+        console.log(obj.x);
 
-        console.log(p);
-        console.log(q);
-        console.log(p == q);
 
 
     </script>
