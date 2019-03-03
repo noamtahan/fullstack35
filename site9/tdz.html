@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+
+ var div = {
+    name : "div",
+    title: "Noam Tile",
+    class: "form-control",
+    text: "שלום לכם",
+    printMe: function () {
+        console.log(`<${this.name} title="${this.title}" class="${this.class}">${this.text}</${this.name}>`);
+    },
+    getAttr: function(key) {
+        console.log(this[key]);
+    },
+    setAttr: function(key, val) {
+        console.log(this[key] = val);
+    },
+    id: "Mydiv",
+ }
+
+ console.log(div);
+ console.log(div.name);
+ console.log(div.class);
+ div.printMe();
+ div.getAttr('class');
+ div.getAttr('title');
+ div.getAttr('name');
+ div.setAttr('title', 'new title');
+ div.setAttr('style', 'color: red;');
+ console.log(div)
+
+
+
+
+/*
+var num = 90;
+
+function Calc(x) {  
+    this.num = x; 
+    // console.log(this.num);  
+} 
+
+var calc = new Calc(100); 
+var calc1 = new Calc(50);
+var calc2 = calc1;
+
+
+
+console.log(calc.num);
+console.log(calc1.num);
+console.log(calc2.num);
+console.log(num);
+
+*/
+
+/*
+// First way:    
+function showMessage(message, header, footer) { 
+
+    var message2Show = ""; 
+
+    if (header != undefined) {        
+        message2Show += header + "\n";  
+    } 
+
+    message2Show += message; 
+
+    if (footer != undefined) {     
+        message2Show += "\n" + footer;   
+    } 
+
+    console.log(message2Show);       
+}      
+showMessage("The exam will be next week.", "Note: ", "Good Luck");    
+showMessage("The exam will be next week.", "Note: ");     
+showMessage("The exam will be next week."); 
+
+// Second way:        
+function showMessage1(message, options) { 
+
+    var message2Show = ""; 
+
+    if (options != undefined && options.header != undefined) {   
+        message2Show += options.header + "\n";    
+    } 
+
+    message2Show += message; 
+
+    if (options != undefined && options.footer != undefined) { 
+        message2Show += "\n" + options.footer;      
+    } 
+
+    console.log(message2Show);      
+}    
+showMessage1("The exam will be next week.", { header: "Note: ", footer: "Good Luck" });   
+showMessage1("The exam will be next week.", { header: "Note: " });    
+showMessage1("The exam will be next week."); 
+
+*/
+
+/*
+        function noam(xf) {
+            xf();
+        }
+        const arr = [];
+        for (var i = 0; i < 3; i++) {
+            arr.push(() => i);
+        }
+        // arr.map(x => console.log(x()));
+        arr.map(noam);
+
+*/
+
+        /*
+        
+            function param (x=42, y="Matrix") {
+                console.log(x + " - " + y);
+            }
+        
+            param(1,2);
+            param(3,"Noam");
+            param(4,"Noam", 56);
+            param(5);
+            param();
+        
+        
+        
+                // OK: `y` accesses `x` after it has been declared
+                function func1(x = 1, y = x) {
+                    return y;
+                }
+                console.log(func1()); // 1
+        
+                // Exception: `x` tries to access `y` within TDZ
+                function bar(x = y, y = 1) {
+                    return x;
+                }
+                console.log(func2()); // ReferenceError
+        */
+    </script>
+</head>
+
+<body>
+        <button onclick="myFunction()">Try it</button>
+        <p id="demo"></p>
+
+
+
+        <script>
+    /*    
+        
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.push(function (){alert()});
+  document.getElementById("demo").innerHTML = fruits;
+}
+
+*/
+
+
+        </script>
+</body>
+
+</html>

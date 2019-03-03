@@ -1,0 +1,18 @@
+#myDIV {
+    width: 300px;
+    height: 200px;
+    background: red;
+    animation: noamFadeIn 10s;
+  }
+  
+  @keyframes noamFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .deleteme {
+    visibility: hidden;
+}
+.deleteme:hover {
+    visibility: visible;
+}
