@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Default functionatrty</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable tr { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable tr td { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "tbody" ).sortable();
+  } );
+  </script>
+</head>
+<body>
+ 
+<table id="sortable">
+    <tbody>
+        <tr class="ui-sortable"><td>Item 1</td></tr>
+        <tr class="ui-sortable"><td>Item 2</td></tr>
+        <tr class="ui-sortable"><td>Item 3</td></tr>
+        <tr class="ui-sortable"><td>Item 4</td></tr></tbody>
+</table>
+
+ 
+ 
+</body>
+</html>

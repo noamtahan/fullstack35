@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="demo">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+
+    <script>
+
+        var responseText = "<h1>Latest posts</h1>";
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    res = JSON.parse(this.responseText);
+                    res.forEach(element => {
+                        console.log(`<h2>${element.title}</h2>`);
+                        console.log(`<p>${element.body}</p>`);
+                        responseText += `<h2>${element.title}</h2><p>${element.body}</p>`;
+                    });
+                    document.getElementById("demo").innerHTML =
+                    responseText;
+                }
+            };
+            xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+            xhttp.send();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/script.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Striped Rows</h2>
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <button id="btn-save-top" type="button" class="btn btn-info btn-block">Save</button>
+            </div>
+            <div class="col-sm-6">
+                <button id="btn-add-top" type="button" class="btn btn-success btn-block" data-toggle="modal"
+                    data-target="#addModal">Add</button></div>
+        </div>
+        <div class="row">
+            <table id="tableDataAll" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Fullname</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <select class="form-control">
+                                <option></option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-warning editrow">Edit</button>
+                            <button type="button" class="btn btn-danger deleterow">Delete</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="row mt-4" id="btn-save-bottom">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-info btn-block">Save</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Row</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Full Name:</label>
+                            <input type="email" class="form-control" id="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Age:</label>
+                            <input type="number" min="0" max="120" class="form-control" id="age">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="insertDataToTable">Add</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
