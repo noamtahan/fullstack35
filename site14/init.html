@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body onload="loadDoc()">
+
+<h1>Blog</h1>
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+
+  var url = "https://jsonplaceholder.typicode.com/posts/"
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+    if (this.status == 200) {
+    //   document.getElementById("demo").innerHTML = this.responseText;
+        response = JSON.parse(this.response);
+        console.log(response);
+        response.forEach(element => {
+            document.getElementById("demo").innerHTML += `<h2>${element.title}</h2>`;
+            document.getElementById("demo").innerHTML += `<p>${element.body} - <a href="single.html?id=${element.id}">read more ... </a></p>`;
+        });
+        
+        // output = `
+        // <h1>${response.title}</h1>
+        // <p>${response.body}</p>
+        // `;
+        // document.getElementById("demo").innerHTML = output;
+
+
+    } else 
+      document.getElementById("demo").innerHTML = "lo lo lo!!!";
+    }
+  };
+  xhttp.open("GET", url , true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
