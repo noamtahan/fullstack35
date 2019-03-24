@@ -1,95 +1,76 @@
-function loadDoc() {
+function loadPosts() {
 
     var url = "https://jsonplaceholder.typicode.com/posts/"
-  
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4) {
-      if (this.status == 200) {
-      //   document.getElementById("demo").innerHTML = this.responseText;
-          response = JSON.parse(this.response);
-          console.log(response);
-          response.forEach(element => {
-              document.getElementById("blog").innerHTML += `      
-              <h2>${element.title}</h2>
-              <h5>Title description, Sep 2, 2017</h5>
-              <div class="fakeimg">Fake Image</div>
-              <p><a href="post.html?id=${element.id}">read more ... </a></p>
-              <p>${element.body}</p>`;
-          });
-          
-          // output = `
-          // <h1>${response.title}</h1>
-          // <p>${response.body}</p>
-          // `;
-          // document.getElementById("demo").innerHTML = output;
-  
-  
-      } else 
-        document.getElementById("blog").innerHTML = "lo lo lo!!!";
-      }
-    };
-    xhttp.open("GET", url , true);
-    xhttp.send();
-  }
-  function loadPost() {
 
+    $.get(url, function (data, status) {
+        if (status == "success") {            
+            response = data;
+            // console.log(response);
+            response.forEach(element => {
+                // console.log(element);
+                var url = "https://jsonplaceholder.typicode.com/users/" + element.userId;
+                // console.log(url);
+
+                $.get(url, function (data, status) {
+                    if (status == "success") {
+                        element.userInfo = data;
+                        document.getElementById("blog").innerHTML += `      
+                        <h2>${element.title}</h2>
+                        <h5>Writtrn by <a data-userId="${element.userInfo.id}" href="#" data-toggle="modal" data-target="#userInfo"  >${element.userInfo.name}</a>, Sep 2, 2017</h5>
+                        <div class="fakeimg">Fake Image</div>
+                        <p><a href="post.html?id=${element.id}">read more ... </a></p>
+                        <p>${element.body}</p>`;
+                    }
+
+                });
+            });
+
+        }
+    });
+}
+
+function getIdFromUrl() {
     var url_string = window.location.href;
     var url = new URL(url_string);
     var id = url.searchParams.get("id");
-    // console.log(id);
-    // console.log(window.location.href);
-    // document.write(id);
+    return id;
 
+}
+
+function loadPost() {
+
+    var id = getIdFromUrl();
 
     var url = "https://jsonplaceholder.typicode.com/posts/" + id;
     var commentsUrl = "https://jsonplaceholder.typicode.com/comments?postId=" + id;
-    
-  
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4) {
-      if (this.status == 200) {
-      //   document.getElementById("demo").innerHTML = this.responseText;
-          response = JSON.parse(this.response);
-          console.log(response);
-            document.getElementById("blog").innerHTML += `      
-            <h2>${response.title}</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p></p>
-            <p>${response.body}</p>`;
-          
-          // output = `
-          // <h1>${response.title}</h1>
-          // <p>${response.body}</p>
-          // `;
-          // document.getElementById("demo").innerHTML = output;
-  
-  
-      } else 
-        document.getElementById("blog").innerHTML = "lo lo lo!!!";
-      }
-    };
-    xhttp.open("GET", url , true);
-    xhttp.send();
+
+    $.get(url, function (data, status) {
+        if (status == "success") {
+            $.get(commentsUrl, function (data, status) {
+                if (status == "success") {
+                    response = data;
+                    console.log(response);
 
 
-    var xhttp1 = new XMLHttpRequest();
-    xhttp1.onreadystatechange = function() {
-      if (this.readyState == 4) {
-      if (this.status == 200) {
-      //   document.getElementById("demo").innerHTML = this.responseText;
-          response = JSON.parse(this.response);
-          console.log(response);           
-      } else 
-        document.getElementById("blog").innerHTML = "lo lo lo!!!";
-      }
-    };
-    xhttp1.open("GET", commentsUrl , true);
-    xhttp1.send();
+                    response.forEach(element => {
+                        $("#comments").append(`      
+                        <h2>${element.name}</h2>
+                        <h5>Title description, Sep 2, 2017</h5>
+                        <p>${element.body}</p>`);
+                    });
 
 
+                }
+            });
 
-  }
-  
+            response = data;
+            console.log(response);
+            $("#blog").prepend(`      
+                    <h2>${response.title}</h2>
+                    <h5>Title description, Sep 2, 2017</h5>
+                    <div class="fakeimg">Fake Image</div>
+                    <p></p>
+                    <p>${response.body}</p>`);
+        }
+    });
+}
