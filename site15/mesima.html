@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Stacked form</h2>
+        <div class="form-group">
+            <label for="email">Post Id:</label>
+            <input type="number" class="form-control" id="pid" name="id">
+        </div>
+        <button type="button" class="btn btn-primary">Get Post</button>
+    </div>
+    <div id="res"></div>
+    <script>
+
+
+        $("button").click(function () {
+
+            var pid = $("#pid").val();
+
+
+
+            // $.ajax({
+            //     url: "https://jsonplaceholder.typicode.com/posts",
+            //     async: false,
+            //     success: function (result) {
+            //         max = result.length;
+            //         $("#pid").attr({ "max": max, "min": 1 });
+            //         console.log(max);
+
+            //     },
+            // });
+
+
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts/" + pid,
+                success: function (result) {
+                    $("#res").html("<h1>" + result.title + " </h1><p>" + result.body + " </p>");
+                },
+                fail: function (result) {
+                    alert("lo");
+                },
+                error: function (result) {
+                    alert("lolo");
+                },
+            });
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>
